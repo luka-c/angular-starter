@@ -1,0 +1,9 @@
+:host {
+  display: block;
+  width: 100%;
+  max-width: 24rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--ngp-border);
+  background-color: var(--ngp-background);
+  box-shadow: var(--ngp-shadow);
+}

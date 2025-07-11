@@ -1,0 +1,29 @@
+<div class="date-picker-header">
+  <button ngpDatePickerPreviousMonth aria-label="previous month">
+    <ng-icon name="lucideChevronLeft" />
+  </button>
+  <h2 ngpDatePickerLabel>{{ label() }}</h2>
+  <button ngpDatePickerNextMonth aria-label="next month">
+    <ng-icon name="lucideChevronRight" />
+  </button>
+</div>
+<table ngpDatePickerGrid>
+  <thead>
+    <tr>
+      <th scope="col" abbr="Sunday">S</th>
+      <th scope="col" abbr="Monday">M</th>
+      <th scope="col" abbr="Tuesday">T</th>
+      <th scope="col" abbr="Wednesday">W</th>
+      <th scope="col" abbr="Thursday">T</th>
+      <th scope="col" abbr="Friday">F</th>
+      <th scope="col" abbr="Saturday">S</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngpDatePickerRowRender>
+      <td *ngpDatePickerCellRender="let date" ngpDatePickerCell>
+        <button ngpDatePickerDateButton>{{ date.getDate() }}</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

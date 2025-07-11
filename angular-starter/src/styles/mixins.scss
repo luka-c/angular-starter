@@ -1,0 +1,53 @@
+@use "./variables" as v;
+
+@mixin min-width($value) {
+  @media screen and (min-width: $value) {
+    @content;
+  }
+}
+
+@mixin max-width($value) {
+  @media screen and (max-width: $value) {
+    @content;
+  }
+}
+
+@mixin small {
+  @include min-width(v.$breakpoint-small) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @include min-width(v.$breakpoint-medium) {
+    @content;
+  }
+}
+
+@mixin large {
+  @include min-width(v.$breakpoint-large) {
+    @content;
+  }
+}
+
+@mixin bg-cover($image) {
+  @if ($image == "") {
+    @error "Mixin 'bg-cover' requires an argument for image path";
+  } @else {
+    background: transparent url($image) center/cover no-repeat;
+  }
+}
+
+@mixin clip-text($maxWidth: auto, $numLines: 1) {
+  max-width: $maxWidth;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  @supports (-webkit-line-clamp: $numLines) {
+    display: -webkit-box;
+    white-space: initial;
+    -webkit-line-clamp: $numLines;
+    -webkit-box-orient: vertical;
+  }
+}

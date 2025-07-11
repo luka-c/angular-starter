@@ -1,0 +1,109 @@
+@use "./variables.scss" as v;
+@use "./mixins.scss" as m;
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-VariableFont.woff2") format("woff2"),
+    url("/fonts/Inter-VariableFont.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Urbanist";
+  src: url("/fonts/Urbanist-VariableFont.woff2") format("woff2"),
+    url("/fonts/Urbanist-VariableFont.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@mixin headline-base {
+  font-family: "Urbanist";
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+@mixin headline-1 {
+  @include headline-base();
+  font-size: v.px-to-rem(80);
+}
+
+@mixin headline-2 {
+  @include headline-base();
+  font-weight: 700;
+  font-size: v.px-to-rem(61);
+}
+
+@mixin headline-3 {
+  @include headline-base();
+  font-weight: 700;
+  font-size: v.px-to-rem(47);
+}
+
+@mixin headline-4 {
+  @include headline-base();
+  font-weight: 700;
+  font-size: v.px-to-rem(36);
+}
+
+@mixin headline-5 {
+  @include headline-base();
+  font-weight: 700;
+  font-size: v.px-to-rem(27);
+}
+
+@mixin headline-6 {
+  @include headline-base();
+  font-weight: 700;
+  font-size: v.px-to-rem(21);
+}
+
+@mixin caption {
+  font-size: v.px-to-rem(12);
+}
+
+html,
+body {
+  font-size: 0.875rem;
+
+  @include m.small {
+    font-size: 1rem;
+  }
+}
+
+body {
+  font-family: "Inter";
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  @include headline-1();
+}
+
+h2 {
+  @include headline-2();
+}
+
+h3 {
+  @include headline-3();
+}
+
+h4 {
+  @include headline-4();
+}
+
+h5 {
+  @include headline-5();
+}
+
+h6 {
+  @include headline-6();
+}
+
+small {
+  @include caption();
+}

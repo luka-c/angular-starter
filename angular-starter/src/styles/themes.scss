@@ -1,0 +1,21 @@
+@use "./colors.scss" as c;
+
+:root {
+  --text: #{c.$black};
+  --background: #{c.$baby-powder};
+  --primary: #{c.$fern-green};
+  --secondary: #{c.$pearl};
+  --accent: #{c.$oxford-blue};
+
+  &.dark {
+    --text: #{c.$baby-powder-variation};
+    --background: #{c.$black-variation};
+    --primary: #{c.$cambridge-blue};
+    --secondary: #{c.$drab-dark-brown};
+    --accent: #{c.$columbia-blue};
+  }
+}
+
+body {
+  background-color: var(--background);
+}

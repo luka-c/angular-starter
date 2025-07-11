@@ -1,0 +1,32 @@
+@use "sass:math";
+
+@function px-to-rem($valuePx) {
+  @if math.is-unitless($valuePx) {
+    @return math.div($valuePx, 16) * 1rem;
+  } @else {
+    @error "Don't use units when using the 'px-to-rem' function.";
+  }
+}
+
+// MARGIN
+$margin-2xs: px-to-rem(4);
+$margin-xs: px-to-rem(8);
+$margin-sm: px-to-rem(12);
+$margin-md: px-to-rem(16);
+$margin-lg: px-to-rem(24);
+$margin-xl: px-to-rem(48);
+$margin-2xl: px-to-rem(64);
+
+// PADDING
+$padding-2xs: px-to-rem(4);
+$padding-xs: px-to-rem(8);
+$padding-sm: px-to-rem(12);
+$padding-md: px-to-rem(16);
+$padding-lg: px-to-rem(24);
+$padding-xl: px-to-rem(48);
+$padding-2xl: px-to-rem(64);
+
+// BREAKPOINTS
+$breakpoint-small: px-to-rem(600);
+$breakpoint-medium: px-to-rem(800);
+$breakpoint-large: px-to-rem(1440);
