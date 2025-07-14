@@ -1,0 +1,31 @@
+:host {
+  display: flex;
+  width: 1.25rem;
+  height: 1.25rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+  border: 1px solid #ccc;
+  background-color: transparent;
+  padding: 0;
+  outline: none;
+  flex: none;
+  color: var(--ngp-text-inverse);
+  font-size: 0.75rem;
+}
+
+:host[data-hover] {
+  background-color: var(--ngp-background-hover);
+}
+
+:host[data-checked],
+:host[data-indeterminate] {
+  border-color: var(--primary);
+  background-color: var(--primary);
+}
+
+:host[data-focus-visible] {
+  outline: 2px solid var(--ngp-focus-ring);
+  outline-offset: 2px;
+}

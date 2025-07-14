@@ -1,20 +1,119 @@
-<section class="app">
-  <app-accordion>
-    <app-accordion-item heading="Accordion 1" value="accordion-item-1">
-      <p>Lorem ipsum dolor sit amet.</p>
-    </app-accordion-item>
-    <app-accordion-item heading="Accordion 2" value="accordion-item-2">
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad corporis
-        doloremque accusamus ducimus minus. Cumque voluptatem magni eligendi
-        natus dignissimos quaerat perferendis, modi corrupti vitae itaque.
-        Voluptatem neque culpa numquam?
-      </p>
-    </app-accordion-item>
-    <app-accordion-item heading="Accordion 3" value="accordion-item-3">
-      <p>Accordion item 3</p>
-    </app-accordion-item>
-  </app-accordion>
+<div class="app">
+  <h1>Angular Starter</h1>
 
-  <button ngpButton appPopoverTrigger="popover">Popover</button>
-</section>
+  <br />
+
+  <section class="accordion">
+    <h5>Accordion example</h5>
+
+    <br />
+
+    <app-accordion>
+      <app-accordion-item heading="Accordion 1" value="accordion-item-1">
+        <p>Lorem ipsum dolor sit amet.</p>
+      </app-accordion-item>
+      <app-accordion-item heading="Accordion 2" value="accordion-item-2">
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad corporis
+          doloremque accusamus ducimus minus. Cumque voluptatem magni eligendi
+          natus dignissimos quaerat perferendis, modi corrupti vitae itaque.
+          Voluptatem neque culpa numquam?
+        </p>
+      </app-accordion-item>
+      <app-accordion-item heading="Accordion 3" value="accordion-item-3">
+        <p>Accordion item 3</p>
+      </app-accordion-item>
+    </app-accordion>
+  </section>
+
+  <section class="buttons">
+    <h5>Buttons example</h5>
+
+    <br />
+
+    <button app-button>Primary</button>
+
+    <button variant="secondary" app-button>Secondary</button>
+
+    <button variant="destructive" app-button>Destructive</button>
+
+    <button variant="outline" app-button>Outline</button>
+
+    <button variant="ghost" app-button>Ghost</button>
+
+    <button variant="link" app-button>Link</button>
+  </section>
+
+  <section class="dialog">
+    <h5>Dialog example</h5>
+
+    <button [ngpDialogTrigger]="dialog" app-button>Open Dialog</button>
+
+    <ng-template #dialog let-close="close">
+      <app-dialog header="Dialog header">
+        <p>
+          This is a dialog. It can be used to display information or to ask for
+          confirmation.
+        </p>
+        <p>
+          You can use the dialog to display any content you want. It can be used
+          to display forms, images, or any other content.
+        </p>
+        <p>
+          You can also use the dialog to ask for confirmation. For example, you
+          can use it to ask the user if they want to delete an item.
+        </p>
+
+        <button (click)="close()" app-button variant="ghost">Close</button>
+        <button (click)="close()" app-button>Delete</button>
+      </app-dialog>
+    </ng-template>
+  </section>
+
+  <section class="form">
+    <h5>Forms example</h5>
+
+    <form>
+      <app-checkbox></app-checkbox>
+    </form>
+  </section>
+
+  <section class="pagiantion">
+    <h5>Pagination example</h5>
+
+    <br />
+
+    <app-pagination
+      pageCount="6"
+      [(page)]="page"
+      (pageChange)="onPaginationChange($event)"
+      aria-label="Pagination"
+    />
+  </section>
+
+  <section class="popover">
+    <h5>Popover example</h5>
+
+    <br />
+
+    <button app-button appPopoverTrigger="popover">Popover</button>
+  </section>
+
+  <section class="tabs">
+    <h5>Tabs example</h5>
+
+    <br />
+
+    <app-tabs>
+      <app-tab value="tab1" label="Tab 1">
+        <p>Tab 1 content</p>
+      </app-tab>
+      <app-tab value="tab2" label="Tab 2">
+        <p>Tab 2 content</p>
+      </app-tab>
+      <app-tab value="tab3" label="Tab 3">
+        <p>Tab 3 content</p>
+      </app-tab>
+    </app-tabs>
+  </section>
+</div>

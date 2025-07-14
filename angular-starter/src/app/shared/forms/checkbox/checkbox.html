@@ -1,1 +1,5 @@
-<p>checkbox works!</p>
+@if (state().indeterminate()) {
+<ng-icon name="lucideMinus" />
+} @else if (state().checked()) {
+<ng-icon name="lucideCheck" />
+}
